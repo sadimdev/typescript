@@ -1,6 +1,7 @@
 let sale = 123_456_789;
 let course = "TypeScript";
 let is_published = true;
+
 //avoid "any" type as many as you can !!
 let level: any;
 function render(doc: any) {
@@ -23,7 +24,6 @@ let user: [number, string] = [1, "Sadim"]; //restrict the tuples to two values s
 const lowerCaseUser = user[1].toLowerCase(); //code completion or intellisense on period sign
 
 // enum - a list of related constant
-
 const enum Size {
   Small = 2,
   Medium,
@@ -56,7 +56,7 @@ calculateTax(10_000);
 // }
 
 // function calculateTax(incomeTax: number, taxYear?: number)
-//compilation exactly same parameter as arguement
+//compilation - exactly same parameter as arguement
 
 //objects
 
@@ -79,3 +79,23 @@ employee.name = "Sadim";
 // employee.id = 0; // compilation error
 
 console.log(employee.name);
+
+
+//Type aliases
+ 
+type Creator = {
+
+  readonly id: number; //prevents accidently modifying value of this property 'readOnly'
+  name: string;
+  retire: (date: Date) => void;
+}
+
+let creator: Creator {
+  //the signature of this method we need to specify how many parameters it ganna have & type of parameter, type of return value
+} = {
+  id: 1,
+  name: "",
+  retire: (date: Date) => {
+    console.log(date);
+  },
+};
