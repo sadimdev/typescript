@@ -64,9 +64,9 @@ calculateTax(10_000);
 
 //code your write make conceptually makes sense ?optional properties to name instead of fax machine **wrong**
 let employee: {
-  readonly id: number; //prevents accidently modifying value of this property 'readOnly'
-  name: string;
-  retire: (date: Date) => void;
+  readonly id: number, //prevents accidently modifying value of this property 'readOnly'
+  name: string,
+  retire: (date: Date) => void
   //the signature of this method we need to specify how many parameters it ganna have & type of parameter, type of return value
 } = {
   id: 1,
@@ -85,17 +85,16 @@ console.log(employee.name);
  
 type Creator = {
 
-  readonly id: number; //prevents accidently modifying value of this property 'readOnly'
-  name: string;
-  retire: (date: Date) => void;
+  readonly id: number, //prevents accidently modifying value of this property 'readOnly'
+  name: string,
+  retire: (date: Date) => void
 }
 
-let creator: Creator {
-  //the signature of this method we need to specify how many parameters it ganna have & type of parameter, type of return value
-} = {
+//the signature of this method we need to specify how many parameters it ganna have & type of parameter, type of return value
+let creator: Creator  = {
   id: 1,
   name: "",
-  retire: (date: Date) => {
+  retire: (date) => {
     console.log(date);
   },
 };
