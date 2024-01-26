@@ -64,9 +64,9 @@ calculateTax(10_000);
 
 //code your write make conceptually makes sense ?optional properties to name instead of fax machine **wrong**
 let employee: {
-  readonly id: number, //prevents accidently modifying value of this property 'readOnly'
-  name: string,
-  retire: (date: Date) => void
+  readonly id: number; //prevents accidently modifying value of this property 'readOnly'
+  name: string;
+  retire: (date: Date) => void;
   //the signature of this method we need to specify how many parameters it ganna have & type of parameter, type of return value
 } = {
   id: 1,
@@ -85,9 +85,9 @@ console.log(employee.name);
  
 type Creator = {
 
-  readonly id: number, //prevents accidently modifying value of this property 'readOnly'
-  name: string,
-  retire: (date: Date) => void
+  readonly id: number; //prevents accidently modifying value of this property 'readOnly'
+  name: string;
+  retire: (date: Date) => void;
 }
 
 //the signature of this method we need to specify how many parameters it ganna have & type of parameter, type of return value
@@ -108,3 +108,13 @@ function kgToLbs (weight: number | string): number{
   else 
   return parseInt(weight) * 2.2;
 }
+
+// Literal type - limits the values (exact / specific)
+
+type Face = 'King' | 'Queen' | 'Jacks';
+
+let face: Face = 'Jacks';
+
+type Roll = 0 | 6;
+
+let roll: Roll = 0;
