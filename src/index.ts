@@ -80,18 +80,16 @@ employee.name = "Sadim";
 
 console.log(employee.name);
 
-
 //Type aliases
- 
-type Creator = {
 
+type Creator = {
   readonly id: number; //prevents accidently modifying value of this property 'readOnly'
   name: string;
   retire: (date: Date) => void;
-}
+};
 
 //the signature of this method we need to specify how many parameters it ganna have & type of parameter, type of return value
-let creator: Creator  = {
+let creator: Creator = {
   id: 1,
   name: "",
   retire: (date) => {
@@ -99,22 +97,57 @@ let creator: Creator  = {
   },
 };
 
-
-//Unions 
-function kgToLbs (weight: number | string): number{
+//Unions
+function kgToLbs(weight: number | string): number {
   //Narrowing
-  if (typeof weight == 'number') 
-    return weight * 2.2
-  else 
-  return parseInt(weight) * 2.2;
+  if (typeof weight == "number") return weight * 2.2;
+  else return parseInt(weight) * 2.2;
 }
 
 // Literal type - limits the values (exact / specific)
 
-type Face = 'King' | 'Queen' | 'Jacks';
+type Face = "King" | "Queen" | "Jacks";
 
-let face: Face = 'Jacks';
+
+let face: Face = "Jacks";
 
 type Roll = 0 | 6;
 
 let roll: Roll = 0;
+
+//Interface
+
+interface User {
+  readonly dbId: number;
+  email: string;
+  userId: number;
+  googleId?: string | number;
+  // startTrial : ()=> string
+  startTrial(): string;
+  getCoupon(couponName: string, value: number): number;
+}
+
+//Reopening the interface
+interface User{
+  githubToken: string
+}
+
+//interface allows to inherit properties of extended interface
+interface Admin extends User {
+  role: "admin" | "ta" | "learner"
+}
+
+const sadim: Admin = {
+  dbId: 3,
+  email: "sad@s.com",
+  userId: 2965,
+  githubToken: "gittoken",
+  startTrial: () => {
+    return "Hello World";
+  },
+  role: "admin",
+  getCoupon : (name : "sadim", off = 20) => {
+    return off
+  } 
+};
+
