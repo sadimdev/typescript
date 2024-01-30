@@ -151,3 +151,10 @@ const sadim: Admin = {
   } 
 };
 
+
+//Genercis
+
+//Input and return needs to be of same type
+function identity<Type>(value: Type): Type{
+  return value;
+}
