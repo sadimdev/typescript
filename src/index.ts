@@ -158,3 +158,5 @@ const sadim: Admin = {
 function identity<Type>(value: Type): Type{
   return value;
 }
+
+//<Array>
