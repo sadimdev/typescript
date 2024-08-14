@@ -88,7 +88,7 @@ type Creator = {
   retire: (date: Date) => void;
 };
 
-//the signature of this method we need to specify how many parameters it ganna have & type of parameter, type of return value
+//the signature of this method we need to specify how many parameters it gonna have & type of parameter, type of return value
 let creator: Creator = {
   id: 1,
   name: "",
@@ -158,3 +158,5 @@ const sadim: Admin = {
 function identity<Type>(value: Type): Type{
   return value;
 }
+
+//<Array>
