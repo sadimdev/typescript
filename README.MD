@@ -232,3 +232,31 @@ const sadim: Admin = {
   } 
 };
 ```
+
+
+### Generics 
+* Data types to-be-specified-later that are then instantiated when needed for specific types provided as parameters 
+
+##  Using Type parameters in Generic constants
+
+````
+	 interface Database {
+    connection: string,
+    username: string,
+    password: string,
+  }
+  
+  function twoParameterFunction<T, U extends Database>(valOne: T, valTwo: U): object{
+    return {
+      valOne,
+      valTwo
+    }
+  }
+  
+  let result = twoParameterFunction(3, {
+    connection: "23423",
+    username: "root",
+    password: "root"
+  });
+  
+````
