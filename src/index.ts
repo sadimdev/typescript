@@ -108,7 +108,6 @@ function kgToLbs(weight: number | string): number {
 
 type Face = "King" | "Queen" | "Jacks";
 
-
 let face: Face = "Jacks";
 
 type Roll = 0 | 6;
@@ -124,17 +123,17 @@ interface User {
   googleId?: string | number;
   // startTrial : ()=> string
   startTrial(): string;
-  getCoupon(couponName: string, value: number): number;
+  getCoupon(couponName: string, value: number): string;
 }
 
 //Reopening the interface
-interface User{
-  githubToken: string
+interface User {
+  githubToken: string;
 }
 
 //interface allows to inherit properties of extended interface
 interface Admin extends User {
-  role: "admin" | "ta" | "learner"
+  role: "admin" | "ta" | "learner";
 }
 
 const sadim: Admin = {
@@ -146,17 +145,8 @@ const sadim: Admin = {
     return "Hello World";
   },
   role: "admin",
-  getCoupon : (name : "sadim", off = 20) => {
-    return off
-  } 
+  getCoupon: (name: "sadim", off = 20) => {
+    const couponCode = name + off;
+    return couponCode;
+  },
 };
-
-
-//Genercis
-
-//Input and return needs to be of same type
-function identity<Type>(value: Type): Type{
-  return value;
-}
-
-//<Array>
