@@ -59,3 +59,29 @@ function getSearchProducts<T>(products: T[]): T {
     username: "root",
     password: "root"
   });
+
+  interface Quiz{
+    name: string;
+    type: string;
+  }
+
+  interface Course {
+    name: string;
+    author: string;
+    subject: string;
+  }
+// Use of generics as a reusable component in Class 
+  class Sellable <T> {
+    public cart : T[] = []
+    addToCart(products: T) {
+      this.cart.push(products) 
+    }
+  }
+
+//instance of class Sellable with Generic type Course || Quiz
+  const obj = new Sellable<Course>()
+  obj.addToCart({
+      name: "",
+      author: "",
+      subject : ""
+  }) // Invoking method 
